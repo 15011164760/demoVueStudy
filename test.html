@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="debounceId">
+     clickFN
+  </div>
+</body>
+</html>
+<script>
+  //函数柯里化
+  /* function add(){
+    let args=Array.prototype.slice.call(arguments);
+    let resustFn=function(){
+      args.push(...arguments);
+      return resustFn
+    }
+    resustFn.toString=function(){
+      return args.reduce((a,b)=>{
+            return a+b
+      })
+    }
+    return resustFn;
+  }
+  alert(add(1,2,3)(3)(5)) */
+  /* function timeFn(num){
+    let age=num;
+     return function(){
+       alert(age); 
+     }
+  }
+  let callBack=timeFn(30)
+  setTimeout(callBack,1000) */
+  let ele=document.getElementById('debounceId');
+  let num=0;
+  ele.onclick=debounde(1000)
+  function debounde(wait){
+     let timer;
+     return function(){
+       if(timer) clearTimeout(timer)
+       timer=setTimeout(()=>{
+           ele.innerHTML=num++;
+       },wait)
+     }
+  }
+</script>

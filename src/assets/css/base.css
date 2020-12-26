@@ -1,0 +1,10 @@
+/* 
+root选择器用匹配文档的根元素。
+在HTML中根元素始终是HTML元素。
+在根元素下自定义一些变量的样式 */
+:root{
+   border:1px solid blue;/* 设置样式 */
+  --bg-color:red;/* 设置自定义的样式 */
+  --font-size:30px;
+  --height-min:100px;
+}

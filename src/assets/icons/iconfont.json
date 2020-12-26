@@ -1,0 +1,16 @@
+{
+  "id": "2002861",
+  "name": "vue-yang",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4608572",
+      "name": "活动,五角星,星",
+      "font_class": "iconzhengli-",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
