@@ -138,10 +138,13 @@ export default {
     debounce(func,delay){
       let timer=null;
       return function(...arg){
-        if(timer)clearTimeout(timer)
-          timer=setTimeout(()=>{
-              func.apply(this,arg)
-          },delay)
+          if(!timer){
+             timer=setTimeout(()=>{
+                  func.apply(this,arg);
+                  timer=null;
+                  console.log(new Date())
+              },delay)
+          }
       }
     },
     getVal(event){
