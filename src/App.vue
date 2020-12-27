@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!-- 文件别名在项目中不是import中使用的时候 -->
+    <img src="~assets/logo.png" alt="" style="border:10px solid pink">
     <div class="demoColor">
       demoColor
     </div>
@@ -133,8 +135,8 @@
 </script>
 
 <style lang="less">
-  @import './assets/css/normalize.css';
-  @import '../src/assets/css/base.css';
+  @import 'assets/css/normalize.css';
+  @import 'assets/css/base.css';
   .demoColor{
     background:var(--bg-color);/*此时的背景色就是base.css中定义的 */
     width:100px;
