@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import load from '@/components/load'
-/* const HelloWorld=()=>import('@/components/HelloWorld');
+import login from '@/components/login'
+import register from '@/components/register'
+import rooms from '@/components/rooms'
+import roomDetail from '@/components/roomDetail'
+/* const login=()=>import('@/components/login');
 const load=()=>import('@/components/load'); */
 Vue.use(Router)
 
@@ -11,17 +13,31 @@ const router=new Router({
     {
       path: '*',
       redirect: '/',
-      // component: HelloWorld
+      component: login
     },
+    //登陆
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'login',
+      component: login
     },
+    //注册
     {
-      path: '/load',
-      name: 'load',
-      component: load
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    //教室列表
+    {
+      path: '/rooms',
+      name: 'rooms',
+      component: rooms
+    },
+    //教室详情
+    {
+      path: '/roomDetail',
+      name: 'roomDetail',
+      component: roomDetail
     },
   ]
 })

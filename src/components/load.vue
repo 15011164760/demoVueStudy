@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" style="border: 1px solid #ddd">
+  <div class="hello">
     <div>loadingloadRef</div>
     <div class="loadStyle">
       <input @input="valChange" type="text" />

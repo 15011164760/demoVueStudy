@@ -10,7 +10,18 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+
+    proxyTable: {
+      '/api': {
+        // http://xnxrn7.natappfree.cc/libraryroom
+        // http://xnxrn7.natappfree.cc/libraryroom
+        target: 'http://xnxrn7.natappfree.cc/libraryroom', // 真实请求的地址
+        changeOrigin: true, // 是否跨域
+        pathRewrite: {
+          '^/api': '/' //需要rewrite的
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 文件别名在项目中不是import中使用的时候 -->
-    <img src="~assets/logo.png" alt="" style="border:10px solid pink">
+    <!-- <img src="~assets/logo.png" alt="" style="border:10px solid pink">
     <div class="demoColor">
       demoColor
     </div>
@@ -11,7 +11,7 @@
       </div>
     </load>  
     <router-link to="load">load</router-link>
-    <router-link to="/">////</router-link>
+    <router-link to="/">////</router-link> -->
     <router-view />
   </div>
 </template>
