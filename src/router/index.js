@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login'
+import luckDraw from '@/components/luckDraw/luckDrawDetail'
 import register from '@/components/register'
 import rooms from '@/components/rooms'
 import roomDetail from '@/components/roomDetail'
@@ -13,13 +14,13 @@ const router=new Router({
     {
       path: '*',
       redirect: '/',
-      component: login
+      component: luckDraw
     },
     //登陆
     {
       path: '/',
-      name: 'login',
-      component: login
+      name: 'luckDraw',
+      component: luckDraw
     },
     //注册
     {
