@@ -40,7 +40,7 @@
             <div class="luckTip" v-show="index == 0">喜提大奖</div>
           </div>
           <div class="chatIcon">
-            消息
+            <!-- 消息 -->
             <!-- <img src="" alt=""> -->
           </div>
         </div>
@@ -210,11 +210,14 @@ export default {
 };
 </script>
 
-<style lang="less">
-@myPadding: 30px;
+<style lang="scss">
+@function rpx($px) {
+    @return ($px / 750) * 100vw;
+}
+$myPadding: rpx(30);
 .joinContent {
   // width: 100%;
-  padding: 0px @myPadding @myPadding;
+  padding: 0 $myPadding $myPadding;
   background: #fff;
 
   // opacity: 0;
@@ -222,7 +225,7 @@ export default {
   &.fixedStyle {
     // padding: 0;
     // width: 100%;
-    // padding: 10px @myPadding 50px;
+    // padding: 10rpx(1111) $myPadding 50rpx(1111);
     height: 100%;
     overflow: scroll;
     position: fixed;
@@ -243,15 +246,16 @@ export default {
       }
     }
     .joinAll {
-      // margin-top:30px;
-      padding-bottom: 60px;
+      // margin-top:30rpx(1111);
+      padding-top:rpx(80);
+      padding-bottom: rpx(60);
       .title {
-        margin-top: 100px;
+        // margin-top: rpx(100);
       }
       .targetAll {
-        padding-bottom: 50px !important;
+        padding-bottom: rpx(50) !important;
         .luckTitle {
-          margin-top: 80px;
+          // margin-top: rpx(80);
         }
       }
     }
@@ -259,28 +263,27 @@ export default {
       background: #fff;
       width: 100%;
       position: fixed;
-      top: 0px;
-      left: 0px;
-      //  padding-bottom:50px !important;
+      top: 0;
+      left: 0;
     }
   }
   .btnContent {
     display: flex;
-    padding-top: 10px;
+    padding-top: rpx(10);
     justify-content: center;
-    // margin-top:10px;
-    margin-bottom: 10px;
+    // margin-top:10rpx(1111);
+    margin-bottom: rpx(10);
     .same {
-      // width: 300px;
-      // height: 60px;
-      padding: 16px 98px;
+      // width: 300rpx(1111);
+      // height: 60rpx(1111);
+      padding: rpx(16) rpx(98);
       color: #262626;
-      border-radius: 30px;
+      border-radius:rpx(30);
       display: flex;
       justify-content: center;
       align-items: center;
       &.left {
-        margin-right: 30px;
+        margin-right: rpx(30);
       }
       &.bg {
         color: #000000;
@@ -291,16 +294,16 @@ export default {
   .joinAll {
     // height: 100vh;
     .title {
-      margin-top: 40px;
+      margin-top: rpx(40);
       color: #a6a6a6;
-      font-size: 22px;
+      font-size: rpx(22);
     }
     .allcontent {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
       .joinList {
-        margin-top: 30px;
+        margin-top: rpx(30);
         width: 20%;
         display: flex;
         flex-direction: column;
@@ -308,14 +311,14 @@ export default {
         overflow: visible;
         //  justify-content: center;
         .circle {
-          width: 80px;
-          height: 80px;
+          width:rpx(80);
+          height: rpx(80);
           border-radius: 50%;
-          border: 1px solid #ddd;
+          border: rpx(1) solid #ddd;
         }
         .text {
           // display: flex;
-          margin-top: 16px;
+          margin-top: rpx(16);
           text-align: center;
           width: 100%;
           text-overflow: ellipsis;
@@ -325,16 +328,16 @@ export default {
       }
     }
     .targetAll {
-      padding: 10px;
+      padding: rpx(10);
       .luckTitle {
-        margin-top: 50px;
-        margin-bottom: 40px;
-        font-size: 28px;
+        margin-top: rpx(50);
+        margin-bottom: rpx(40);
+        font-size: rpx(28);
         color: #000;
         font-weight: 500;
       }
       .everyRow {
-        padding: 16px 0;
+        padding: rpx(16) 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -342,29 +345,30 @@ export default {
           display: flex;
           align-items: center;
           .logo {
-            width: 88px;
-            height: 88px;
-            border: 1px solid #ddd;
+            width: rpx(88);
+            height: rpx(88);
+            border: rpx(1) solid #ddd;
             border-radius: 50%;
           }
           .name {
-            margin-left: 12px;
+            margin-left: rpx(12);
           }
           .luckTip {
-            padding: 8px 12px;
-            margin-left: 12px;
+            padding: rpx(8) rpx(12);
+            margin-left: rpx(12);
             background: #fef5e5;
-            border-radius: 18px;
-            font-size: 20px;
+            border-radius: rpx(18);
+            font-size:rpx(20);
             font-weight: 500;
             color: #fba000;
           }
         }
         .chatIcon {
-          width: 34px;
-          line-height: 34px;
-          height: 34px;
-          border: 1px solid #ddd;
+          width: rpx(34);
+          line-height: rpx(34);
+          height: rpx(34);
+          border-radius: 50%;
+          border: rpx(1) solid #ddd;
         }
       }
     }

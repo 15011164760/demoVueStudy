@@ -57,56 +57,59 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less">
-@myPadding: 30px;
+<style lang="scss">
+@function rpx($px) {
+    @return ($px / 750) * 100vw;
+}
+$myPadding: rpx(30);
 .detailContainer {
-  padding: @myPadding;
+  padding: $myPadding;
   .desc {
-    font-size: 34px;
+    font-size: rpx(34);
     font-weight: 400;
     color: #000000;
-    line-height: 48px;
+    line-height: rpx(48);
   }
   .hostInfo {
     display: flex;
-    padding-top: 26px;
+    padding-top: rpx(26);
     align-items: center;
     .hostLogo {
-      width: 48px;
-      height: 48px;
+      width: rpx(48);
+      height: rpx(48);
       border-radius: 50%;
       overflow: hidden;
       background: #ddd;
     }
     .hostName {
-      margin-left: 20px;
-      font-size: 28px;
+      margin-left: rpx(20);
+      font-size:rpx(28);
       font-weight: 400;
       color: #a6a6a6;
       .time {
-        margin-left: 5px;
+        margin-left: rpx(5);
       }
     }
   }
   .detailContent {
-    margin-top: 50px;
+    margin-top: rpx(50);
     .detailTitle {
-      font-size: 22px;
+      font-size: rpx(22);
       color: #a6a6a6;
     }
     .detailAllRow {
-      margin-top: 20px;
-      margin-bottom: 50px;
+      margin-top: rpx(20);
+      margin-bottom: rpx(50);
       .row {
-        // padding: 10px;
+        // padding: 10rpx(1111);
         display: flex;
         justify-content: space-between;
-        font-size: 26px;
-        padding-bottom: 30px;
-        padding-top: 30px;
-        border-bottom: 1px solid #f2f2f2;
+        font-size: rpx(26);
+        padding-bottom: rpx(30);
+        padding-top:  rpx(30);
+        border-bottom: rpx(1) solid #f2f2f2;
         .left {
-          font-size: 26px;
+          font-size: rpx(26);
           color: #595959;
         }
         .right {
@@ -115,11 +118,11 @@ export default {
         &.endTipIcon{
             position: relative;
           .circle{
-            width:180px;
-            height: 180px;
+            width:rpx(180);
+            height: rpx(180);
              position: absolute;
-             top:-28px;
-             right:50px;
+             top:rpx(-28);
+             right:rpx(50);
              border-radius: 50%;
              background:rgba(245, 33, 33, 0.3);
              

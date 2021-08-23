@@ -75,7 +75,7 @@ this.findStudyroomFn();
   },
 };
 </script>
-<style lang="less">
+<style lang="scss">
 .roomsPage {
   width: 100vw;
   height: 100vh;
@@ -90,7 +90,7 @@ this.findStudyroomFn();
       margin-bottom: 10px;
       background: #fff;
       margin-right:20px;
-      width: calc(~"25% - 20px");
+      // width: calc(~"25% - 20px");
       height: 100px;
       border-radius: 20px;
       display: flex;

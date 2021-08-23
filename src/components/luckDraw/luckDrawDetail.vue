@@ -38,7 +38,7 @@ export default {
           color: "#FBA000",
           text:'1天 12:12:00 后开始',
           status
-          // fontSize:'30px'
+          // fontSize:'30rpx(1111)'
         };
       }
       else if (status == "2") {
@@ -80,20 +80,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less">
-@myPadding: 30px;
+<style lang="scss">
+@function rpx($px) {
+    @return ($px / 750) * 100vw;
+}
+$myPadding:rpx(30);
 .luckDrawDetail {
   width: 100%;
   height: 100vh;
   // 轮播图
   .slideContent {
     width: 100%;
-    height: 560px;
+    height: rpx(560);
     background: gray;
   }
   .bottomContent {
     position: fixed;
-    bottom: 60px;
+    bottom: rpx(60);
     left: 0;
     width: 100%;
     display: flex;
@@ -102,11 +105,11 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 310px;
+      width: rpx(310);
       background: #f2f2f2;
-      font-size: 28px;
-      padding: 30px 10px;
-      border-radius: 44px;
+      font-size: rpx(28);
+      padding: rpx(30) rpx(10);
+      border-radius: rpx(44);
       color: #bebebe;
     }
   }

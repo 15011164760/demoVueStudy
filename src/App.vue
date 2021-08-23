@@ -134,7 +134,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="scss">
   @import 'assets/css/normalize.css';
   @import 'assets/css/base.css';
   .demoColor{

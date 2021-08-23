@@ -183,7 +183,7 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="scss">
 .roomDetailPage {
   width: 100vw;
   height: 100vh;
@@ -211,7 +211,8 @@ export default {
     .room_every {
       padding-right:30px;
       margin-bottom: 20px;
-      width: calc(~"25% - 30px");
+      // width: calc(~"25% - 30px");
+      width:25%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -231,14 +232,15 @@ export default {
         margin-top:10px;
         height: 50px;
           border-radius: 20px;
-        width: calc(~"50%");
+        // width: calc(~"50%");
         background: #dc9b79;
         position: relative;
         .setType{
             width: 100%;
           position: absolute;
           bottom: 50%;
-          left: calc(~"50% - 30px");;
+          // left: calc(~"50% - 30px");;
+          left: 50%;
           img{
             width:70px;
             height:100px;
