@@ -81,6 +81,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+
 @function rpx($px) {
     @return ($px / 750) * 100vw;
 }
