@@ -19,6 +19,8 @@ var _rooms = _interopRequireDefault(require("@/components/rooms"));
 
 var _roomDetail = _interopRequireDefault(require("@/components/roomDetail"));
 
+var _showImg = _interopRequireDefault(require("@/components/imgSports/showImg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* const login=()=>import('@/components/login');
@@ -29,12 +31,12 @@ var router = new _vueRouter["default"]({
   routes: [{
     path: '*',
     redirect: '/',
-    component: _luckDrawDetail["default"]
+    component: _showImg["default"]
   }, //登陆
   {
     path: '/',
-    name: 'luckDraw',
-    component: _luckDrawDetail["default"]
+    name: 'showImg',
+    component: _showImg["default"]
   }, //注册
   {
     path: '/register',

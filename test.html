@@ -1,50 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="utf-8">
+    <title>
+        Document
+    </title>
+    </meta>
 </head>
+ 
 <body>
-  <div id="debounceId">
-     clickFN
-  </div>
+    <!-- <script src="jquery-1.11.3.min.js" type="text/javascript"> -->
+    <script src="https://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script>
+    <style>
+    .my-container {
+        margin: auto 0;
+        padding: 10px;
+    }
+ 
+    .my-container>div:first-child {
+        background: #c0cbff;
+        margin: auto 0;
+        padding: 10px;
+        height: 130px;
+    }
+ 
+ 
+    .my-container>div:last-child {
+        background: pink;
+        margin: 10px 0;
+        padding: 10px;
+        height: 130px;
+    }
+ 
+    .my-container>div>div {
+        width: 100px;
+        height: 100px;
+        margin: 5px 10px;
+        padding: 10px;
+        float: left;
+        /* 过渡时间 */
+        transition:width 2s, height 2s, transform 2s;
+        -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+    }
+ 
+    .my-container>div:first-child>div {
+        background: #ccc;
+    }
+ 
+    .my-container>div:last-child>div {
+        background: #fff;
+    }
+    </style>
+    <div class="my-container">
+        <div class="div1">
+            <div id="A">子容器A</div>
+            <div id="B">子容器B</div>
+        </div>
+        <div class="div2">
+            <div id="C">子容器C</div>
+            <div id="D">子容器D</div>
+        </div>
+    </div>
+    交换元素：
+    <select name="" id="select1" class="select">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <select name="" id="select2" class="select">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <script>
+    $(function() {
+        $('.select').on('change',function(){
+            var select1=$('#select1');
+            var select2=$('#select2');
+            if(select1.val()!=select2.val()){//不同元素  位置交换
+                var removeDiv1=$('#'+select1.val());
+                var removeDiv2=$('#'+select2.val());
+                var appendToObj1=hasBorther(removeDiv1);
+                var appendToObj2=hasBorther(removeDiv2);
+                addCartoon(removeDiv1,removeDiv2);//添加动画
+                //移动两个容器
+                removeDiv(appendToObj1,removeDiv2);
+                removeDiv(appendToObj2,removeDiv1);
+                 
+            }else{
+                alert('请选择不同元素交换位置！');
+            }
+        })
+ 
+        //判断其后边是否存在兄弟元素
+        function hasBorther(va1){
+            if(va1.next()[0]){//兄弟元素
+                return {bor:va1.next()};
+            }else{
+                return {par:va1.parent()};//父元素
+            }
+        }
+        //保证位置正确
+        function removeDiv(app,Div){
+            if(app.bor){//兄弟元素
+               Div.insertBefore(app.bor);
+            }else{
+               Div.appendTo(app.par);
+            }
+ 
+        }
+ 
+        //移动时之前------添加动画
+        function addCartoon(a,b){
+            var clearTransform=function(Div,time){
+                setTimeout(function(){
+                    Div.css({'transform':'inherit','-webkit-transform':'inherit'});   
+                },time)
+            }
+            //记录两容器原始高宽
+            var oldOpt={ax:a.width(),ay:a.height(),bx:b.width(),by:b.height()};
+ 
+            //获取两容器屏幕位置
+            var a_pos=a.offset();
+            var b_pos=b.offset();
+            //获取两容器偏移值
+            var offset_x=a_pos.left-b_pos.left;
+            var offset_y=a_pos.top-b_pos.top;
+ 
+            //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+            a.animate({},function(){       
+            var offset_x_=-offset_x; //偏移值取反
+                var offset_y_=-offset_y;                                  
+                var transformStr='rotate(360deg) translate('+offset_x_+'px,'+offset_y_+'px)';
+                a.css({'width':oldOpt.bx+'px','height':oldOpt.by+'px','transform':transformStr,'-webkit-transform':transformStr});
+                clearTransform(a,0);            
+            })
+ 
+             b.animate({},function(){  
+                var transformStr='rotate(360deg) translate('+offset_x+'px,'+offset_y+'px)';
+                b.css({'width':oldOpt.ax+'px','height':oldOpt.ay+'px','transform':transformStr,'-webkit-transform':transformStr});
+                clearTransform(b,0);
+            })
+        }
+         
+    })
+    </script>
 </body>
+ 
 </html>
-<script>
-  //函数柯里化
-  /* function add(){
-    let args=Array.prototype.slice.call(arguments);
-    let resustFn=function(){
-      args.push(...arguments);
-      return resustFn
-    }
-    resustFn.toString=function(){
-      return args.reduce((a,b)=>{
-            return a+b
-      })
-    }
-    return resustFn;
-  }
-  alert(add(1,2,3)(3)(5)) */
-  /* function timeFn(num){
-    let age=num;
-     return function(){
-       alert(age); 
-     }
-  }
-  let callBack=timeFn(30)
-  setTimeout(callBack,1000) */
-  let ele=document.getElementById('debounceId');
-  let num=0;
-  ele.onclick=debounde(1000)
-  function debounde(wait){
-     let timer;
-     return function(){
-       if(timer) clearTimeout(timer)
-       timer=setTimeout(()=>{
-           ele.innerHTML=num++;
-       },wait)
-     }
-  }
-</script>

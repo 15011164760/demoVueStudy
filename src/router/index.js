@@ -5,6 +5,7 @@ import luckDraw from '@/components/luckDraw/luckDrawDetail'
 import register from '@/components/register'
 import rooms from '@/components/rooms'
 import roomDetail from '@/components/roomDetail'
+import showImg from '@/components/imgSports/showImg'
 /* const login=()=>import('@/components/login');
 const load=()=>import('@/components/load'); */
 Vue.use(Router)
@@ -14,13 +15,13 @@ const router=new Router({
     {
       path: '*',
       redirect: '/',
-      component: luckDraw
+      component: showImg
     },
     //登陆
     {
       path: '/',
-      name: 'luckDraw',
-      component: luckDraw
+      name: 'showImg',
+      component: showImg
     },
     //注册
     {
