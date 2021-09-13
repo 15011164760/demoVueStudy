@@ -2,6 +2,7 @@
   <div class="luckDrawDetail">
         <div id="big" @click="showFn(item)" :style="{margin:item.imgBool?'80px':'',marginRight:item.imgBool?'110px':''}" v-for="(item,index) in list" :key="index">
         我是模型{{index+1}},点击之后出现模型{{index+1}}的图片
+        
             <div v-show="item.imgBool" id="top" class="animationsTop"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
             <div  v-show="item.imgBool" id="right" class="animationsRight"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
             <div  v-show="item.imgBool" id="bottom" class="animationsBottom"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>

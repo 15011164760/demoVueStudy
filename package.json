@@ -20,7 +20,11 @@
     "element-ui": "^2.13.0",
     "less-loader": "^4.1.0",
     "object-assign": "^4.1.1",
+    "three": "^0.115.0",
     "vue": "^2.5.2",
+    "three-css2drender": "^1.0.0",
+    "three-obj-mtl-loader": "^1.0.3",
+    "three-orbit-controls": "^82.1.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -78,7 +82,7 @@
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-jest": "^1.0.2",
-    "vue-loader": "^13.3.0",
+    "vue-loader": "^13.7.3",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "vuex": "^3.1.3",

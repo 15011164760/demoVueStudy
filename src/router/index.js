@@ -6,6 +6,7 @@ import register from '@/components/register'
 import rooms from '@/components/rooms'
 import roomDetail from '@/components/roomDetail'
 import showImg from '@/components/imgSports/showImg'
+import fbx from '@/components/imgSports/fbx'
 /* const login=()=>import('@/components/login');
 const load=()=>import('@/components/load'); */
 Vue.use(Router)
@@ -28,6 +29,12 @@ const router=new Router({
       path: '/register',
       name: 'register',
       component: register
+    },
+    //注册
+    {
+      path: '/fbx',
+      name: 'fbx',
+      component: fbx
     },
     //教室列表
     {

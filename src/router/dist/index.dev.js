@@ -21,6 +21,8 @@ var _roomDetail = _interopRequireDefault(require("@/components/roomDetail"));
 
 var _showImg = _interopRequireDefault(require("@/components/imgSports/showImg"));
 
+var _fbx = _interopRequireDefault(require("@/components/imgSports/fbx"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* const login=()=>import('@/components/login');
@@ -42,6 +44,11 @@ var router = new _vueRouter["default"]({
     path: '/register',
     name: 'register',
     component: _register["default"]
+  }, //注册
+  {
+    path: '/fbx',
+    name: 'fbx',
+    component: _fbx["default"]
   }, //教室列表
   {
     path: '/rooms',
