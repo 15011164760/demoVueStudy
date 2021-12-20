@@ -6,6 +6,8 @@ import register from '@/components/register'
 import rooms from '@/components/rooms'
 import roomDetail from '@/components/roomDetail'
 import showImg from '@/components/imgSports/showImg'
+import editShow from '@/components/editShow.vue'
+import waterImage from '@/components/waterImage.vue'
 import fbx from '@/components/imgSports/fbx'
 /* const login=()=>import('@/components/login');
 const load=()=>import('@/components/load'); */
@@ -14,9 +16,19 @@ Vue.use(Router)
 const router=new Router({
   routes: [
     {
-      path: '*',
-      redirect: '/',
-      component: showImg
+      path: '/',
+      // redirect: '/',
+      component: waterImage
+    },
+    {
+      path: '/editShow',
+      // redirect: '/',
+      component: editShow
+    },
+    {
+      path: '/luckDraw',
+      name: 'luckDraw',
+      component: luckDraw
     },
     //登陆
     {

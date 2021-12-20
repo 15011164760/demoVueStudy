@@ -21,11 +21,12 @@
     "less-loader": "^4.1.0",
     "object-assign": "^4.1.1",
     "three": "^0.115.0",
-    "vue": "^2.5.2",
     "three-css2drender": "^1.0.0",
     "three-obj-mtl-loader": "^1.0.3",
     "three-orbit-controls": "^82.1.0",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
+    "wangeditor": "^4.7.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -76,6 +77,7 @@
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.3.1",
+    "sass-resources-loader": "^2.2.4",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",

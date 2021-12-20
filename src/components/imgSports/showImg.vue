@@ -1,13 +1,16 @@
 <template>
   <div class="luckDrawDetail">
-        <div id="big" @click="showFn(item)" :style="{margin:item.imgBool?'80px':'',marginRight:item.imgBool?'110px':''}" v-for="(item,index) in list" :key="index">
+      <div id="contenter">
+
+      </div>
+      <!--   <div id="big" @click="showFn(item)" :style="{margin:item.imgBool?'80px':'',marginRight:item.imgBool?'110px':''}" v-for="(item,index) in list" :key="index">
         我是模型{{index+1}},点击之后出现模型{{index+1}}的图片
         
             <div v-show="item.imgBool" id="top" class="animationsTop"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
             <div  v-show="item.imgBool" id="right" class="animationsRight"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
             <div  v-show="item.imgBool" id="bottom" class="animationsBottom"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
             <div  v-show="item.imgBool" id="left" class="animationsLeft"><img src="https://pic.rmb.bdstatic.com/bjh/down/718cd16f0093f2beb7802e3b7050eaaa.jpeg" /></div>
-        </div>
+        </div> -->
   </div>
 </template>
 
@@ -54,10 +57,15 @@ export default {
             margin:0;
             padding:0;
         }
-@function rpx($px) {
-    @return ($px / 750) * 100vw;
-}
+// @function rpx($px) {
+//     @return ($px / 750) * 100vw;
+// }
 $myPadding:rpx(30);
+#contenter{
+    width:rpx(100);
+    height:100px;
+    background: #ddd;
+}
 .luckDrawDetail {
   width: 100%;
   height: 100vh;

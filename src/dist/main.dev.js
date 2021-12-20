@@ -4,6 +4,8 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _less = _interopRequireDefault(require("less"));
 
+require("../static/style/common.scss");
+
 var _App = _interopRequireDefault(require("./App"));
 
 var _router = _interopRequireDefault(require("./router"));
@@ -20,7 +22,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-// import 'assets/css/variables.scss';
 // import './assets/icon/iconfont.css';
 // import '@/assets/css/element-variables.scss'
 // import './element-css/index.css';// 2.3、引入ElementUI的自定义的主题样式

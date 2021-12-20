@@ -26,7 +26,23 @@
     <div class="joinAll">
       <div class="title" v-show="textDesc">{{ textDesc }}</div>
       <div class="allcontent" v-show="activeVal == '1'">
-        <div class="joinList" v-for="(item, index) in newNumList" :key="index">
+        <div class="joinList" >
+          <div class="circle"></div>
+          <div class="text">Ccc,2019</div>
+        </div>
+        <div class="joinList" >
+          <div class="circle"></div>
+          <div class="text">小A2195</div>
+        </div>
+        <div class="joinList" >
+          <div class="circle"></div>
+          <div class="text">Ggg9911</div>
+        </div>
+        <div class="joinList" >
+          <div class="circle"></div>
+          <div class="text">Bb2019</div>
+        </div>
+        <div class="joinList" >
           <div class="circle"></div>
           <div class="text">yangdongxuyangdongxu</div>
         </div>
@@ -321,6 +337,9 @@ $myPadding: rpx(30);
           margin-top: rpx(16);
           text-align: center;
           width: 100%;
+          height: 30px;
+          border:1px solid #ddd;
+          line-height:30px ;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;

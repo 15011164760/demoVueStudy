@@ -21,6 +21,10 @@ var _roomDetail = _interopRequireDefault(require("@/components/roomDetail"));
 
 var _showImg = _interopRequireDefault(require("@/components/imgSports/showImg"));
 
+var _editShow = _interopRequireDefault(require("@/components/editShow.vue"));
+
+var _waterImage = _interopRequireDefault(require("@/components/waterImage.vue"));
+
 var _fbx = _interopRequireDefault(require("@/components/imgSports/fbx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -31,9 +35,17 @@ _vue["default"].use(_vueRouter["default"]);
 
 var router = new _vueRouter["default"]({
   routes: [{
-    path: '*',
-    redirect: '/',
-    component: _showImg["default"]
+    path: '/',
+    // redirect: '/',
+    component: _waterImage["default"]
+  }, {
+    path: '/editShow',
+    // redirect: '/',
+    component: _editShow["default"]
+  }, {
+    path: '/luckDraw',
+    name: 'luckDraw',
+    component: _luckDrawDetail["default"]
   }, //登陆
   {
     path: '/',

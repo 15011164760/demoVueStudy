@@ -95,4 +95,7 @@ export default {
   height: 500px;
   width: 500px;
 }
+div{
+  color:rgba(255, 184, 92, .7)
+}
 </style>

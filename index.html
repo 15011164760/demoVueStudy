@@ -4,9 +4,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>pro</title>
+    <style>
+        .bao{
+            color:#FFF;
+            width:100px;
+            height:100px;
+            background: #CED0D7;
+        }
+    </style>
   </head>
   <body>
+      <div class="bao">水电费水电费</div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
+<script>
+  const week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+  function dateFormat(v, fmt) {
+
+if (!(v instanceof Date)) {
+    v = new Date(parseInt(v) || 0)
+}
+
+if (fmt === undefined) {
+    var now = new Date()
+    now.setHours(0)
+    now.setMinutes(0)
+    now.setSeconds(0)
+    now.setMilliseconds(0)
+    var dv = Math.floor((now.getTime() - v.getTime()) / 1000);
+    if (dv <= 0) {
+        fmt = 'hh:mm';
+    }
+    else if (dv < 24 * 3600) {
+        fmt = '昨天 hh:mm';
+    }
+    // else if (dv < 24 * 3600 * 6) {
+    //     fmt = 'W hh:mm';
+    // }
+    // else if (now.getFullYear() == v.getFullYear()) {
+    //     fmt = 'MM-dd hh:mm';
+    // }
+    else {
+        fmt = 'yyyy-MM-dd';
+    }
+}
+
+var o = {
+    "M+": v.getMonth() + 1,
+    "d+": v.getDate(),
+    "h+": v.getHours(),
+    "m+": v.getMinutes(),
+    "s+": v.getSeconds(),
+    "q+": Math.floor((v.getMonth() + 3) / 3),
+    "S": v.getMilliseconds(), //毫秒   
+    'W': week[v.getDay()]
+};
+fmt = fmt.replace(/y+/g, function (text) {
+    return (v.getFullYear() + "").substr(4 - text.length);
+});
+var _loop_1 = function () {
+    var v_1 = o[k] + '';
+    fmt = fmt.replace(new RegExp(k), function (text) {
+        if (text.length == 1) {
+            return o[k];
+        }
+        return ("00" + v_1).substr(v_1.length);
+    });
+};
+for (var k in o) {
+    _loop_1();
+}
+return fmt;
+}
+console.log(dateFormat(new Date()*1,'yyyy/MM/dd'))
+</script>

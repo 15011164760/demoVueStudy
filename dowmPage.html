@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>滚动条距离底部的距离</title>
-    </head>
-    <body>
-        <div class="box">
-            <div style="height:10000px;"></div>
-        </div>
-        <script>
-            window.addEventListener('scroll',function(){
-                console.log(document.documentElement.scrollTop);//代表目前滚动条和最上方的距离多长
-                console.log(document.documentElement.scrollHeight);//代表整个滚动条多长
-                console.log(document.documentElement.clientHeight);
-                console.log(document.documentElement.scrollHeight-document.documentElement.scrollTop-document.documentElement.clientHeight);
-            })
-        </script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .textContent{
+            width:100%;
+            display: flex;
+        }
+        .bigText{
+            max-width: 224px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="dartIcon">
+          
+    </div>
+    <div class="textContent">
+        <div class="bigText">这个是这个是和很长很长的名字这个是这个是和很长很长的名字</div>
+        <div>邀请你加入房间</div>
+    </div>
+</body>
 </html>
+<script>
+    let arr=[];
+    arr[0]=111;
+    arr[1]='yang1';
+    console.log(arr,arr.length,arr['a']);
+    console.time('awww')
+     let work=new Worker('./work1.js');
+     work.onmessage=(e)=>{
+        //  debugger
+         console.log(e.data,'====');
+         work.postMessage('cao');
+         // 主线程
+        //  work.terminate();
+     }
+     console.timeEnd('awww')
+
+</script>
